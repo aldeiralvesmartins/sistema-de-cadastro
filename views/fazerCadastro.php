@@ -1,6 +1,6 @@
 <?php
-include 'includes/header.php';
-include 'classes/cadastro.php';
+include '../includes/header.php';
+include '../classes/cadastro.php';
 
 $c = new usuario();
         if(isset($_POST["nome"]))
@@ -49,5 +49,5 @@ $c = new usuario();
       </form>
     <?php
   
-      include 'includes/footer.php';
+      include '../includes/footer.php';
       ?>

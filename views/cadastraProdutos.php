@@ -6,8 +6,8 @@ if(!isset($_SESSION['usuarioLog']))
   header("location: login.php");
   session_destroy();
 }
-include 'includes/header.php';
-include 'classes/produto.php';
+include '../includes/header.php';
+include '../classes/produto.php';
 
 
 $p = new Produto();
@@ -113,4 +113,4 @@ $p = new Produto();
       $p->excluirCategoria($id);
       header("location:cadastraProdutos.php");
     }
-include 'includes/footer.php';
+include '../includes/footer.php';

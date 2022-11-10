@@ -7,8 +7,8 @@ if(isset($_SESSION['usuarioLog']))
   die();
 }
 
-include 'includes/header.php';
-include 'classes/cadastro.php';
+include '../includes/header.php';
+include '../classes/cadastro.php';
 
 $c = new usuario("app_db", "localhost:3306", "r2soft", "r2147258369");
 ?>
@@ -44,4 +44,4 @@ $c = new usuario("app_db", "localhost:3306", "r2soft", "r2147258369");
     }
     
     
-    include 'includes/footer.php';
+    include '../includes/footer.php';
