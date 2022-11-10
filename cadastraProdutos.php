@@ -56,21 +56,21 @@ $p = new Produto();
      <section id="esquerda">
       <form method="POST">
         <h2>CADASTRAR PRODUTO</h2>
-        
+        <br>
         <input type="number" placeholder="Codigo Do Produto" name="code_Categories" id="code_Categories"
         value="<?php if(isset($res)){echo $res['code_Categories'];} ?>"
         >
-        
+        <br>
         <input type="text" placeholder="Nome " name="name_Categories" id="name_Categories"
         value="<?php if(isset($res)){echo $res['name_Categories'];} ?>"
-        >
+        ><br>
         <input type="submit" 
         value="<?php if(isset($res)){echo 'Atualizar';}else{echo 'Cadastrar';} ?>">
         
-      </form><button><a href="logout.php">Sair</a></button>
-     </section>
+      </form> <button><a href="logout.php">Sair</a></button>
+     </section> 
      <section id="direita">
-      
+    
       <table>
         <tr id="titulo">
           <td>CODIGO DO PRODUTO</td>
