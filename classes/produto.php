@@ -1,11 +1,11 @@
 <?php
 
 
-Class Categoria {
+Class Produto {
     
     private $PDO; 
 
-    public function __construct($dbname, $dbhost, $use, $senha)
+    public function __construct($dbname = "app_db", $dbhost = "localhost:3306", $use = "r2soft", $senha ="r2147258369")
     {
         try {
             $this->PDO = new PDO("mysql:dbname=".$dbname.";host=".$dbhost, $use, $senha);
