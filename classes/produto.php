@@ -5,7 +5,7 @@ Class Produto {
     
     private $PDO; 
 
-    public function __construct($dbname = "app_db", $dbhost = "localhost:3306", $use = "r2soft", $senha ="r2147258369")
+    public function __construct()
     {
         try {
             $this->PDO = new PDO("mysql:dbname=".$dbname.";host=".$dbhost, $use, $senha);
@@ -70,20 +70,5 @@ Class Produto {
         $cmd->execute();
     }
 
-    public static function connection(){
 
-        $dbname = "app_db";
-        $dbhost = "localhost:3306";
-        $use = "r2soft";
-        $senha = "r2147258369";
-        try {
-           return new PDO("mysql:dbname=".$dbname.";host=".$dbhost, $use, $senha);
-        } 
-        catch (PDOException $e) {
-           return "erro de banco de dados: ".$e->getMessage();
-        }
-        catch (PDOException $e) {
-            return "erro generico: ".$e->getMessage();
-         }
-        }
 }
