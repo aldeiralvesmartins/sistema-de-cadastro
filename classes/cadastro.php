@@ -4,7 +4,7 @@ Class usuario {
     
     private $PDO; 
 
-    public function __construct($dbname = "app_db", $dbhost ="localhost:3306", $use = "r2soft", $senha = "r2147258369")
+    public function __construct($dbname = "")
     {
         try {
             $this->PDO = new PDO("mysql:dbname=".$dbname.";host=".$dbhost, $use, $senha);
