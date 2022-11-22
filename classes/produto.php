@@ -28,6 +28,14 @@ Class Produto {
         return $res;
     }
 
+    public function valorTotal()
+    {
+        $cmd = $this->PDO->query("SELECT sum(code_Categories) as quantidade from Categories");
+        $res =$cmd->fetch(PDO::FETCH_ASSOC);
+        return $res;
+    }
+
+
     public function cadastrarCategorias($code, $nome)
     {
         $cmd = $this->PDO->prepare("SELECT id_Categories FROM Categories WHERE code_Categories = :c");

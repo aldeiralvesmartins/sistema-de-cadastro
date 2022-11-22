@@ -6,8 +6,8 @@ if(!isset($_SESSION['usuarioLog']))
   header("location: login.php");
   session_destroy();
 }
-include '../includes/header.php';
-include '../classes/produto.php';
+include 'includes/header.php';
+include 'classes/produto.php';
 
 
 $p = new Produto();
@@ -52,29 +52,30 @@ $p = new Produto();
     $id_update = addslashes($_GET['id_up']);
     $res = $p->buscarDadosCategoria($id_update);
   }
+
   ?>
      <section id="esquerda">
       <form method="POST">
         <h2>CADASTRAR PRODUTO</h2>
-        <br>
+        
         <input type="number" placeholder="Codigo Do Produto" name="code_Categories" id="code_Categories"
         value="<?php if(isset($res)){echo $res['code_Categories'];} ?>"
         >
-        <br>
+        
         <input type="text" placeholder="Nome " name="name_Categories" id="name_Categories"
         value="<?php if(isset($res)){echo $res['name_Categories'];} ?>"
-        ><br>
+        >
         <input type="submit" 
         value="<?php if(isset($res)){echo 'Atualizar';}else{echo 'Cadastrar';} ?>">
         
-      </form> <button><a href="logout.php">Sair</a></button>
-     </section> 
-     <section id="direita">
-    
+      </form><button><a href="logout.php">Sair</a></button>
+    </section>
+    <section id="direita">
+      
       <table>
         <tr id="titulo">
           <td>CODIGO DO PRODUTO</td>
-          <td colspan="2">NOME</td>
+          <td colspan="3">NOME</td>
         </tr>
         <?php
       $dados = $p->buscarDados();
@@ -95,7 +96,7 @@ $p = new Produto();
               <a id="editar" href="cadastraProdutos.php?id_up=<?php echo $dados[$i]['id_Categories'];?>">Editar</a>
               <a id="excluir" href="cadastraProdutos.php?id_Categories=<?php echo $dados[$i]['id_Categories'];?>">Excluir</a>
             </td>
-            </section>
+      </section>
            
         <?php
              echo "</tr>";
@@ -113,4 +114,7 @@ $p = new Produto();
       $p->excluirCategoria($id);
       header("location:cadastraProdutos.php");
     }
-include '../includes/footer.php';
+
+   
+
+include 'includes/footer.php';

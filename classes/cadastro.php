@@ -44,7 +44,6 @@ Class usuario {
            
         }
     }
-
     public function logar($usuario, $senha )
     {
          //verifica se o email e senha estão cadastrado, se sim
